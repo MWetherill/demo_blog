@@ -1,2 +1,21 @@
-<h1 class="title">Blog Index</h1>
-<p>This is the index page for the blog (posts).</p>
+<% content_for :page_title, "Blog Index" %>
+
+<section class="section">
+  <div class="container">
+    <% @posts.each do |post| %>
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="title is-4"><%= link_to post.title, post %></div>
+          </div>
+          <div class="content">
+            <%= post.content %>
+          </div>
+          <!-- <div class="comment-count">
+            <span class="tag is-rounded"><%# comment count %></span>
+          </div> -->
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
